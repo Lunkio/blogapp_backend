@@ -1,9 +1,13 @@
 !!This is the Backend -part of this app. Front End-code can be found at https://github.com/Lunkio/blogapp_frontend
 
-## Blog App
+## Blog Manager
 
-A blog app where users can login, add blogs and see other blogs which are added by other users. Only logged in users can use the app. User can only remove those blog posts that he/she has been adding. App contains also users -section, where you can browse all registered users and their blog posts.
+A blog managing application, where users can login, add blogs, like and comment them. Only logged in users can use the application. Users can only remove their own blogs. Application contains also a section, where users can browse all the registered users and the amount of blogs a certain user has added.
 
 ### `How was this achieved?`
 
-Application utilizes MongoDB for its database, JsonWebToken for token based authentication, React Redux and Redux-Thunk for managing the state, Semantic-UI-React for the layout and design and backend is made using NodeJS and express. Testing includes Cypress
+Application utilizes MongoDB for its database, JSON Web Token for token based authentication when adding and deleting blogs, React Redux and Redux-Thunk for managing the state, Semantic-UI-React for the layout and design. Backend is made using NodeJS and Express. Front End testing utilizes Enzyme and Cypress. Backend testing uses Jest and Supertest -library.
+
+### `Challenges`
+
+Goal of this project was to create an application that separates the application state from the React components and React only focuses on generating the views. Redux, its actions and reducers are taking care of the state. UseState -hook is used only once, for setting the 'view' -state.
