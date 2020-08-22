@@ -9,13 +9,12 @@ const loginRouter = require('./controllers/login')
 const middleware = require('./utils/middleware')
 const mongoose = require('mongoose')
 
-mongoose.set('useCreateIndex', true)
-mongoose.connect(config.MONGODB_URI, { useNewUrlParser: true, useFindAndModify: false })
+mongoose.connect(config.MONGODB_URI, { useNewUrlParser: true, useFindAndModify: false, useCreateIndex: true })
     .then(() => {
         console.log('connected to MongoDB')
     })
     .catch((error) => {
-        console.log('error connection to MongoDB:', error.message)
+        console.log('Error', error.message)
     })
 
 app.use(cors())
